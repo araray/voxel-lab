@@ -41,15 +41,18 @@ bool Universe::group_move(const std::string& name, const IVec3& d) {
   if (it == groups_.end()) return false;
   std::vector<IVec3> newMembers;
   newMembers.reserve(it->second.size());
-  // Move actual cubes if they exist
-  std::unordered_map<IVec3, Cube, IVec3Hasher> moved;
+
+  // Copy then move to avoid collisions
+  std::vector<std::pair<IVec3, Cube>> temp;
   for (auto& p : it->second) {
-    auto c = get(p.x,p.y,p.z);
-    if (!c) continue;
-    cubes_.erase(p);
+    if (auto c = get(p.x,p.y,p.z)) {
+      temp.emplace_back(p, *c);
+    }
+  }
+  for (auto& [p,c] : temp) erase(p.x,p.y,p.z);
+  for (auto& [p,c] : temp) {
     IVec3 np{p.x + d.x, p.y + d.y, p.z + d.z};
-    placed:
-    cubes_[np] = *c;
+    place(np.x,np.y,np.z, c);
     newMembers.push_back(np);
   }
   it->second.swap(newMembers);
