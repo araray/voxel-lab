@@ -1,0 +1,9 @@
+# Right-click programmable menu (Label=command)
+Place at origin=place 0 0 0 color=#66ffffff
+Toggle Grid=grid toggle
+Toggle Wireframe=wireframe toggle
+Select 3x3x3 around origin=select box -1 -1 -1 1 1 1
+Move selection up=move 0 1 0
+Rotate selection 15 deg=rotate y 15
+Fill selection red=fill solid #ff0000ff
+Fill gradient blue->white=fill gradient #0044ffff #ffffffff dir=y
