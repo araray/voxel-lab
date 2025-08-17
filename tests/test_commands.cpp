@@ -1,9 +1,10 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_approx.hpp>
 #include "commands.hpp"
 #include <sstream>
 
 using namespace vxl;
-
+using Catch::Approx;
 TEST_CASE("Commands basic") {
   Universe U;
   Selection S;

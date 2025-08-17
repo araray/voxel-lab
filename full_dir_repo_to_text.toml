@@ -1,0 +1,4 @@
+[default]
+exclusion_patterns_file = "dir_docs_exclusions_patterns.txt"
+bool_clean_inline_comments = true
+topn = 10

@@ -1,7 +1,9 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_approx.hpp>
 #include "universe.hpp"
 
 using namespace vxl;
+using Catch::Approx;
 
 TEST_CASE("Universe place/erase/get works") {
   Universe U;

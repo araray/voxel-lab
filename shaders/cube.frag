@@ -4,7 +4,7 @@ in VS_OUT {
     vec3 worldPos;
     vec4 colorA;
     vec4 colorB;
-    int kind;
+    flat int kind;
     vec3 gradDir;
 } fs_in;
 

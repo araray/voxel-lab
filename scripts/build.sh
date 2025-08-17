@@ -26,7 +26,7 @@ cmake -S . -B build -G "${GENERATOR}" \
   -DBUILD_TESTING="${BUILD_TESTING}"
 
 echo "==> Building"
-cmake --build build --config "${CONFIG}" -- -j
+cmake --build build --config "${CONFIG}" -- -j 4
 
 echo "==> Done. Binary:"
 if [[ -f "build/voxel_lab" ]]; then

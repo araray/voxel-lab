@@ -1,5 +1,5 @@
 #include "selection.hpp"
-#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/quaternion.hpp>
 #include <limits>
 #include <cmath>
 

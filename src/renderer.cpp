@@ -165,6 +165,8 @@ void Renderer::render(const Universe& U, const Selection& Sel, const glm::mat4& 
     // (Modern approach would use a dedicated shader; kept simple here.)
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     draw_grid(P*V);
+    // Restore fill mode; wireframe (if requested) will be applied below.
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
   }
 
   // Prepare instance buffer
